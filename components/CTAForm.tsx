@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,6 +22,14 @@ import { pushGTMEvent } from "@/lib/gtm";
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function CTAForm() {
+  return (
+    <Suspense fallback={<div className="rounded-xl border bg-card p-6 shadow-sm h-80 animate-pulse" />}>
+      <CTAFormInner />
+    </Suspense>
+  );
+}
+
+function CTAFormInner() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [serverError, setServerError] = useState<string>("");
   const searchParams = useSearchParams();

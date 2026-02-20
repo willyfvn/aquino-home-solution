@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 interface GalleryImage {
   src: string;
@@ -9,13 +10,23 @@ interface GalleryImage {
 
 export default function GalleryCarousel({ images }: { images: GalleryImage[] }) {
   const doubled = [...images, ...images];
+  const [isInteracting, setIsInteracting] = useState(false);
 
   return (
-    <div className="group relative w-full overflow-hidden rounded-xl">
+    <div
+      className="group relative w-full overflow-hidden rounded-xl"
+      onMouseEnter={() => setIsInteracting(true)}
+      onMouseLeave={() => setIsInteracting(false)}
+      onTouchStart={() => setIsInteracting(true)}
+      onTouchEnd={() => setIsInteracting(false)}
+      onFocusCapture={() => setIsInteracting(true)}
+      onBlurCapture={() => setIsInteracting(false)}
+    >
       <div
         className="flex gap-3 w-max"
         style={{
           animation: `slide-gallery ${images.length * 4}s linear infinite`,
+          animationPlayState: isInteracting ? "paused" : "running",
         }}
       >
         {doubled.map((img, i) => (
@@ -40,9 +51,6 @@ export default function GalleryCarousel({ images }: { images: GalleryImage[] }) 
         @keyframes slide-gallery {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
-        }
-        .group:hover > div {
-          animation-play-state: paused;
         }
       `}</style>
     </div>

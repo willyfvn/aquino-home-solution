@@ -23,7 +23,7 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function CTAForm() {
   return (
-    <Suspense fallback={<div className="h-80 animate-pulse rounded-xl border border-blue-200/80 bg-linear-to-b from-white to-blue-50/30 p-6 shadow-[0_18px_44px_-30px_rgba(30,64,175,0.5)]" />}>
+    <Suspense fallback={<div className="rounded-xl border bg-card p-6 shadow-sm h-80 animate-pulse" />}>
       <CTAFormInner />
     </Suspense>
   );
@@ -85,10 +85,10 @@ function CTAFormInner() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-blue-200/80 bg-linear-to-b from-white to-blue-50/30 p-10 text-center shadow-[0_18px_44px_-30px_rgba(30,64,175,0.5)]">
+      <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-10 text-center shadow-sm">
         <CheckCircle className="mb-4 h-14 w-14 text-green-500" />
-        <h3 className="mb-2 text-xl font-semibold text-slate-900">Request Received!</h3>
-        <p className="mb-6 text-slate-600">
+        <h3 className="text-xl font-semibold mb-2">Request Received!</h3>
+        <p className="text-muted-foreground mb-6">
           We&apos;ll get back to you within 1 business hour. For urgent needs, call us directly.
         </p>
         <Button onClick={() => setStatus("idle")} variant="outline">
@@ -101,7 +101,7 @@ function CTAFormInner() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4 rounded-xl border border-blue-200/80 bg-linear-to-b from-white to-blue-50/30 p-6 shadow-[0_18px_44px_-30px_rgba(30,64,175,0.5)]"
+      className="rounded-xl border bg-card p-6 shadow-sm space-y-4"
       noValidate
     >
       {/* Name */}
@@ -182,7 +182,7 @@ function CTAFormInner() {
       <Button
         type="submit"
         size="lg"
-        className="w-full bg-linear-to-r from-blue-500 to-red-500 text-white hover:from-blue-400 hover:to-red-400"
+        className="w-full"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? (
@@ -195,7 +195,7 @@ function CTAFormInner() {
         )}
       </Button>
 
-      <p className="text-center text-xs text-slate-600">
+      <p className="text-center text-xs text-muted-foreground">
         We respond within 1 business hour · No spam, ever
       </p>
     </form>

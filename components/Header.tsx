@@ -19,15 +19,15 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/30 bg-white/65 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200/60 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/aquino-logo.webp"
             alt="Aquino Home Solutions"
-            width={220}
-            height={220}
+            width={256}
+            height={256}
             className="rounded-md"
           />
         </Link>
@@ -38,7 +38,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-700 transition-colors hover:text-slate-900"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
             >
               {link.label}
             </Link>
@@ -49,7 +49,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href={`tel:${BUSINESS.phoneRaw}`}
-            className="flex items-center gap-2 text-sm font-medium text-slate-700 transition-colors hover:text-slate-900"
+            className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             onClick={() => pushGTMEvent("click_call")}
           >
             <Phone className="h-4 w-4" />
@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="flex items-center justify-center rounded-md p-2 text-slate-700 hover:text-slate-900 md:hidden"
+          className="flex items-center justify-center rounded-md p-2 text-gray-600 hover:text-gray-900 md:hidden"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -72,13 +72,13 @@ export default function Header() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="border-t border-white/40 bg-white/80 backdrop-blur-xl md:hidden">
+        <div className="border-t border-gray-200/60 bg-white/95 backdrop-blur-md md:hidden">
           <nav className="flex flex-col px-4 py-3 gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100/80 hover:text-slate-900"
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -86,7 +86,7 @@ export default function Header() {
             ))}
             <a
               href={`tel:${BUSINESS.phoneRaw}`}
-              className="mt-2 flex items-center gap-2 rounded-md bg-slate-900 px-3 py-2 text-sm font-medium text-white"
+              className="mt-2 flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
               onClick={() => pushGTMEvent("click_call")}
             >
               <Phone className="h-4 w-4" />

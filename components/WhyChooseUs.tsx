@@ -60,19 +60,8 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="bg-linear-to-b from-slate-950 via-blue-950 to-red-950 py-10 md:py-14">
+    <section className="bg-muted/40 py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
-          <p className="inline-flex items-center rounded-full border border-blue-200/30 bg-white/10 px-4 py-1 text-xs font-semibold tracking-[0.2em] text-blue-100 uppercase">
-            Why Choose Us
-          </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Trusted Local Team for Heating, Cooling, and Plumbing
-          </h2>
-          <p className="mt-3 text-blue-100/80">
-            We focus on fast response times, code-compliant work, and honest communication from your first call to final cleanup.
-          </p>
-        </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {reasons.map(({ icon, title, description }, i) => (
             <div
@@ -80,11 +69,11 @@ export default function WhyChooseUs() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="rounded-2xl border border-blue-200/30 p-8 text-center"
+              className="rounded-2xl border border-blue-400/20 p-8 text-center"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(30,58,138,0.88) 0%, rgba(127,29,29,0.82) 100%)",
-                boxShadow: "0 20px 55px -30px rgba(15,23,42,0.9)",
+                  "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.38 0.16 240) 100%)",
+                boxShadow: "0 4px 16px oklch(0.28 0.12 250 / 0.35)",
                 transition: "opacity 1.4s ease, transform 1.4s ease",
                 transitionDelay: `${i * 250}ms`,
                 opacity: visible[i] ? 1 : 0,
@@ -103,7 +92,7 @@ export default function WhyChooseUs() {
               >
                 {title}
               </h3>
-              <p className="text-blue-100/85">{description}</p>
+              <p className="text-blue-100/80">{description}</p>
             </div>
           ))}
         </div>

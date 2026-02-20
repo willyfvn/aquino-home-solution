@@ -1,0 +1,100 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { BUSINESS, SERVICES } from "@/lib/constants";
+
+export default function Footer() {
+  return (
+    <footer className="bg-[oklch(0.25_0.15_250)] text-slate-300">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Brand column */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/aquino-logo.webp"
+                alt="Aquino Home Solutions"
+                width={128}
+                height={128}
+                className="rounded-md"
+              />
+            </div>
+            <p className="text-sm leading-relaxed">
+              {BUSINESS.description}
+            </p>
+            <div className="mt-4 flex gap-3">
+              <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+                Licensed
+              </span>
+              <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+                Insured
+              </span>
+            </div>
+          </div>
+
+          {/* Services column */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+              Services
+            </h3>
+            <ul className="space-y-2">
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    href="/services"
+                    className="text-sm hover:text-white transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact column */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+              Contact
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={`tel:${BUSINESS.phoneRaw}`}
+                  className="flex items-center gap-2 text-sm hover:text-white transition-colors"
+                >
+                  <Phone className="h-4 w-4 shrink-0 text-primary" />
+                  {BUSINESS.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${BUSINESS.email}`}
+                  className="flex items-center gap-2 text-sm hover:text-white transition-colors"
+                >
+                  <Mail className="h-4 w-4 shrink-0 text-primary" />
+                  {BUSINESS.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                {BUSINESS.address}
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="space-y-0.5">
+                  <div>{BUSINESS.hours.weekdays}</div>
+                  <div>{BUSINESS.hours.saturday}</div>
+                  <div>{BUSINESS.hours.sunday}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-slate-500">
+          © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}

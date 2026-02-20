@@ -14,8 +14,8 @@ export default function Footer() {
               <Image
                 src="/aquino-logo.webp"
                 alt="Aquino Home Solutions"
-                width={128}
-                height={128}
+                width={112}
+                height={112}
                 className="rounded-md"
               />
             </div>

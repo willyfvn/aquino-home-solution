@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CTAForm from "@/components/CTAForm";
@@ -132,20 +131,45 @@ export default function HomePage() {
       {/* Service areas */}
       <section className="border-t border-blue-100 bg-linear-to-b from-blue-50/60 to-red-50/70 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Areas We Serve
             </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+              Based in Lowell, MA, we serve surrounding communities with fast
+              response times and reliable scheduling.
+            </p>
           </div>
-          <div className="mx-auto max-w-md overflow-hidden rounded-2xl border border-blue-200/60 shadow-[0_20px_55px_-28px_rgba(30,64,175,0.45)]">
-            <Image
-              src="/service-area-map.webp"
-              alt="Map showing Aquino Home Solutions service area — Lowell MA and surrounding communities within ~30 miles"
-              width={928}
-              height={928}
-              className="w-full h-auto"
-              priority
-            />
+
+          <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-blue-200/70 bg-white/70 p-4 shadow-[0_20px_55px_-30px_rgba(30,64,175,0.45)] backdrop-blur-sm md:grid-cols-[0.9fr_1.1fr] md:p-6">
+            <div className="flex flex-col justify-center rounded-2xl bg-linear-to-b from-blue-50 to-red-50 p-5">
+              <p className="inline-flex w-fit items-center rounded-full border border-blue-200 bg-white/80 px-3 py-1 text-xs font-semibold tracking-wide text-blue-700 uppercase">
+                Service Radius
+              </p>
+              <p className="mt-3 text-lg font-semibold text-slate-900">
+                Serving communities across Massachusetts
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Need to confirm your town? Call us and we will verify
+                availability right away.
+              </p>
+              <Button asChild className="mt-5 w-fit bg-linear-to-r from-blue-500 to-red-500 text-white hover:from-blue-400 hover:to-red-400">
+                <Link href={`tel:+${BUSINESS.phoneRaw}`}>
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call {BUSINESS.phone}
+                </Link>
+              </Button>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-blue-200/80">
+              <iframe
+                title="Aquino Home Solutions map showing Massachusetts"
+                src="https://www.google.com/maps?q=Massachusetts&z=7&output=embed"
+                className="h-[320px] w-full md:h-[360px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
       </section>

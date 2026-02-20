@@ -26,8 +26,8 @@ export default function Header() {
           <Image
             src="/aquino-logo.webp"
             alt="Aquino Home Solutions"
-            width={256}
-            height={256}
+            width={220}
+            height={220}
             className="rounded-md"
           />
         </Link>

@@ -28,8 +28,8 @@ export default function HomePage() {
             </video>
 
             {/* Color overlays */}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.45),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(239,68,68,0.4),transparent_40%)]" />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-slate-950/85 via-blue-950/80 to-red-900/70" />
+            <div className="pointer-events-none absolute inset-0 animate-gradient-pan-slower animate-gradient-drift bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.45),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(239,68,68,0.4),transparent_40%)]" />
+            <div className="pointer-events-none absolute inset-0 animate-gradient-pan-slow bg-linear-to-br from-slate-950/85 via-blue-950/80 to-red-900/70" />
 
             <div className="relative mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-20 md:py-24">
               <div className="mx-auto max-w-3xl rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-2xl backdrop-blur-md sm:p-10">
@@ -98,7 +98,7 @@ export default function HomePage() {
       {/* Request Appointment */}
       <section
         id="appointment"
-        className="overflow-x-hidden bg-linear-to-b from-red-50 via-white to-blue-50 py-16 md:py-24"
+        className="animate-gradient-pan-slower overflow-x-hidden bg-linear-to-b from-red-50 via-white to-blue-50 py-16 md:py-24"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
@@ -129,7 +129,7 @@ export default function HomePage() {
       <GoogleReviews />
 
       {/* Service areas */}
-      <section className="border-t border-blue-100 bg-linear-to-b from-blue-50/60 to-red-50/70 py-12 md:py-16">
+      <section className="animate-gradient-pan-slower border-t border-blue-100 bg-linear-to-b from-blue-50/60 to-red-50/70 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -142,7 +142,7 @@ export default function HomePage() {
           </div>
 
           <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-blue-200/70 bg-white/70 p-4 shadow-[0_20px_55px_-30px_rgba(30,64,175,0.45)] backdrop-blur-sm md:grid-cols-[0.9fr_1.1fr] md:p-6">
-            <div className="flex flex-col justify-center rounded-2xl bg-linear-to-b from-blue-50 to-red-50 p-5">
+            <div className="animate-gradient-pan-slow flex flex-col justify-center rounded-2xl bg-linear-to-b from-blue-50 to-red-50 p-5">
               <p className="inline-flex w-fit items-center rounded-full border border-blue-200 bg-white/80 px-3 py-1 text-xs font-semibold tracking-wide text-blue-700 uppercase">
                 Service Radius
               </p>

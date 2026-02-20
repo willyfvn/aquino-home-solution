@@ -5,7 +5,7 @@ import { BUSINESS, SERVICES } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-[oklch(0.25_0.15_250)] text-slate-300">
+    <footer className="bg-linear-to-br from-slate-950 via-blue-950 to-red-950 text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Brand column */}
@@ -23,10 +23,10 @@ export default function Footer() {
               {BUSINESS.description}
             </p>
             <div className="mt-4 flex gap-3">
-              <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+              <span className="rounded-full bg-blue-400/20 px-3 py-1 text-xs font-medium text-blue-200">
                 Licensed
               </span>
-              <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+              <span className="rounded-full bg-red-400/20 px-3 py-1 text-xs font-medium text-red-200">
                 Insured
               </span>
             </div>
@@ -62,7 +62,7 @@ export default function Footer() {
                   href={`tel:${BUSINESS.phoneRaw}`}
                   className="flex items-center gap-2 text-sm hover:text-white transition-colors"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-primary" />
+                  <Phone className="h-4 w-4 shrink-0 text-blue-300" />
                   {BUSINESS.phone}
                 </a>
               </li>
@@ -71,16 +71,16 @@ export default function Footer() {
                   href={`mailto:${BUSINESS.email}`}
                   className="flex items-center gap-2 text-sm hover:text-white transition-colors"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-primary" />
+                  <Mail className="h-4 w-4 shrink-0 text-red-300" />
                   {BUSINESS.email}
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm">
-                <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                <MapPin className="h-4 w-4 shrink-0 text-blue-300" />
                 {BUSINESS.address}
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-red-300" />
                 <div className="space-y-0.5">
                   <div>{BUSINESS.hours.weekdays}</div>
                   <div>{BUSINESS.hours.saturday}</div>

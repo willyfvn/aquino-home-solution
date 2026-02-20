@@ -177,23 +177,16 @@ const services = [
 
 export default function ServiceSections() {
   return (
-    <div>
-      {services.map((service, i) => (
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 md:py-14">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      {services.map((service) => (
         <section
           key={service.id}
           id={service.id}
-          className={`py-10 md:py-14 ${i % 2 === 1 ? "bg-muted/40" : ""}`}
+          className="h-full rounded-3xl border border-blue-100/70 bg-linear-to-b from-white to-blue-50/35 p-6 shadow-[0_22px_48px_-34px_rgba(30,64,175,0.45)] sm:p-8"
         >
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center text-center">
-              <div
-                className="mb-5 inline-flex items-center justify-center rounded-2xl text-white"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.42 0.18 240) 100%)",
-                  padding: "1.1rem",
-                }}
-              >
+              <div className="mb-5 inline-flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-600 to-red-500 p-[1.1rem] text-white shadow-lg shadow-blue-900/30">
                 {service.icon}
               </div>
 
@@ -202,16 +195,10 @@ export default function ServiceSections() {
               </h3>
 
               <div className="mt-4 flex flex-col items-center justify-center gap-2.5">
-                <span
-                  className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-white"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.42 0.18 240) 100%)",
-                  }}
-                >
+                <span className="inline-flex items-center rounded-full bg-linear-to-r from-blue-600 to-red-500 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
                   {service.badge}
                 </span>
-                <span className="text-sm font-medium text-muted-foreground">
+                <span className="text-sm font-medium text-slate-600">
                   {service.category}
                 </span>
               </div>
@@ -220,30 +207,28 @@ export default function ServiceSections() {
                 <GalleryCarousel images={service.gallery} />
               </div>
 
-              <div className="mt-8 grid w-full grid-cols-2 gap-4">
+              <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
                 {service.subServices.map((sub) => (
                   <div
                     key={sub.title}
-                    className="rounded-2xl border border-border/60 bg-white p-5 text-left shadow-sm"
+                    className="rounded-2xl border border-blue-100/80 bg-linear-to-b from-white to-blue-50/35 p-5 text-left shadow-[0_18px_44px_-30px_rgba(30,64,175,0.5)]"
                   >
-                    <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-blue-100 to-red-100 text-blue-700">
                       {sub.icon}
                     </span>
-                    <h4 className="mb-1.5 text-sm font-bold text-foreground">
+                    <h4 className="mb-1.5 text-sm font-bold text-slate-900">
                       {sub.title}
                     </h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs leading-relaxed text-slate-600">
                       {sub.description}
                     </p>
                   </div>
                 ))}
               </div>
-
-           
             </div>
-          </div>
-          </section>
+        </section>
         ))}
       </div>
+    </div>
   );
 }

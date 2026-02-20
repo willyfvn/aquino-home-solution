@@ -60,8 +60,20 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="bg-muted/40 py-10 md:py-14">
+    <section className="bg-[linear-gradient(135deg,rgba(8,14,36,0.98)_0%,rgba(14,34,84,0.96)_48%,rgba(110,14,30,0.95)_100%)] py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
+          <p className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">
+            Why Choose Us
+          </p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Trusted Local Team for Heating, Cooling, and Plumbing
+          </h2>
+          <p className="mt-3 text-blue-100/80">
+            We focus on fast response times, code-compliant work, and honest
+            communication from your first call to final cleanup.
+          </p>
+        </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {reasons.map(({ icon, title, description }, i) => (
             <div

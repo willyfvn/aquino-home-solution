@@ -220,7 +220,7 @@ export default function ServiceSections() {
                 <GalleryCarousel images={service.gallery} />
               </div>
 
-              <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="mt-8 grid w-full grid-cols-2 gap-4">
                 {service.subServices.map((sub) => (
                   <div
                     key={sub.title}
@@ -239,18 +239,7 @@ export default function ServiceSections() {
                 ))}
               </div>
 
-              <div className="mt-10">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-[400px] gap-3 rounded-full bg-[#9c0908] px-7 py-6 text-base font-extralight text-white shadow-lg hover:bg-[#7a0706]"
-                >
-                  <Link href={`?service=${service.id}#appointment`}>
-                    <ArrowRightCircle className="!size-4" />
-                    Schedule {service.title} Service
-                  </Link>
-                </Button>
-              </div>
+           
             </div>
           </div>
           </section>

@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileStickyBar from "@/components/MobileStickyBar";
 import { BUSINESS } from "@/lib/constants";
 
 const inter = Inter({
@@ -102,7 +104,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased pb-14">
         {GTM_ID && (
           <noscript>
             <iframe
@@ -113,8 +115,10 @@ export default function RootLayout({
             />
           </noscript>
         )}
+        <Header />
         <main>{children}</main>
         <Footer />
+        <MobileStickyBar />
       </body>
     </html>
   );

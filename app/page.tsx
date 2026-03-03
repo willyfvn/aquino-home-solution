@@ -87,7 +87,7 @@ export default function HomePage() {
       {/* Request Appointment */}
       <section
         id="appointment"
-        className="overflow-x-hidden bg-[linear-gradient(180deg,rgba(238,244,255,0.8)_0%,rgba(255,255,255,1)_58%,rgba(255,240,242,0.72)_100%)] py-16 md:py-24"
+        className="overflow-x-hidden bg-[linear-gradient(180deg,rgba(238,244,255,0.8)_0%,rgba(255,255,255,1)_58%,rgba(255,240,242,0.72)_100%)] py-6 md:py-10"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">

@@ -23,7 +23,7 @@ export default function HomePage() {
               fill
               priority
               sizes="100vw"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-top"
             />
 
             {/* Contrast overlays */}
@@ -36,7 +36,7 @@ export default function HomePage() {
             />
 
             <div className="relative flex min-h-[380px] flex-col justify-end sm:min-h-[480px] md:min-h-[560px]">
-              <div className="mx-auto w-full max-w-4xl px-6 pb-4 text-center sm:px-10 sm:pb-6">
+              <div className="mx-auto w-full max-w-4xl px-6 pb-0 text-center sm:px-10 sm:pb-0">
                 <h1
                   className="animate-fade-in mx-auto max-w-3xl text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
                   style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}

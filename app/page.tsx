@@ -38,7 +38,7 @@ export default function HomePage() {
             <div className="relative flex min-h-[380px] flex-col justify-end sm:min-h-[480px] md:min-h-[560px]">
               <div className="mx-auto w-full max-w-4xl px-6 pb-4 text-center sm:px-10 sm:pb-6">
                 <h1
-                  className="animate-fade-in mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                  className="animate-fade-in mx-auto max-w-3xl text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
                   style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
                 >
                   The <span className="text-[#e23635]">Plumbing Experts</span>
@@ -46,12 +46,12 @@ export default function HomePage() {
                   You&apos;ve Trusted for 15 Years
                 </h1>
 
-                <div className="animate-fade-in [animation-delay:300ms] mt-6">
+                <div className="animate-fade-in [animation-delay:300ms] mt-4">
                   <a
                     href={`tel:${BUSINESS.phoneRaw}`}
-                    className="inline-flex items-center gap-3 rounded-xl bg-[#e23635] px-7 py-4 text-lg font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-[0.97]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#e23635] px-4 py-2.5 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-[0.97] sm:gap-3 sm:px-7 sm:py-4 sm:text-lg"
                   >
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     Emergency? Call {BUSINESS.phone}
                   </a>
                 </div>

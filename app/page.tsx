@@ -41,7 +41,10 @@ export default function HomePage() {
                   className="animate-fade-in mx-auto max-w-3xl text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
                   style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
                 >
-                  The <span className="text-[#e23635]">Plumbing Experts</span>
+                  The <span className="relative inline-block text-white">
+                    <span className="absolute inset-0 -skew-x-3 rounded bg-[#e23635]" aria-hidden="true" />
+                    <span className="relative">Plumbing Experts</span>
+                  </span>
                   <br />
                   You&apos;ve Trusted for 15 Years
                 </h1>

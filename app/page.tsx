@@ -18,8 +18,8 @@ export default function HomePage() {
         <div className="relative overflow-hidden">
             {/* Background image */}
             <Image
-              src="/aquino-working.jpeg"
-              alt="Aquino Home Solutions technician working on an HVAC system"
+              src="/aquino-guy.png"
+              alt="Aquino Home Solutions technician"
               fill
               priority
               sizes="100vw"
@@ -31,21 +31,31 @@ export default function HomePage() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(125deg, rgba(5,10,24,0.88) 0%, rgba(10,28,70,0.7) 42%, rgba(130,15,20,0.38) 72%, rgba(5,10,24,0.82) 100%)",
+                  "linear-gradient(to bottom, rgba(5,10,24,0.0) 0%, rgba(5,10,24,0.05) 50%, rgba(5,10,24,0.70) 78%, rgba(5,10,24,0.88) 100%)",
               }}
             />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(56,96,180,0.16),rgba(4,8,20,0.68))]" />
 
-            <div className="relative mx-auto max-w-4xl px-6 py-20 text-center sm:px-10 sm:py-28 md:py-36">
-              <h1 className="animate-fade-in mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                Expert <span className="text-[#e23635]">HVAC & Plumbing</span>
-                <br />
-                You Can Trust
-              </h1>
+            <div className="relative flex min-h-[380px] flex-col justify-end sm:min-h-[480px] md:min-h-[560px]">
+              <div className="mx-auto w-full max-w-4xl px-6 pb-4 text-center sm:px-10 sm:pb-6">
+                <h1
+                  className="animate-fade-in mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                  style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
+                >
+                  The <span className="text-[#e23635]">Plumbing Experts</span>
+                  <br />
+                  You&apos;ve Trusted for 15 Years
+                </h1>
 
-              <p className="animate-fade-in [animation-delay:300ms] mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
-                From emergency repairs to full installations. Quality guaranteed.
-              </p>
+                <div className="animate-fade-in [animation-delay:300ms] mt-6">
+                  <a
+                    href={`tel:${BUSINESS.phoneRaw}`}
+                    className="inline-flex items-center gap-3 rounded-xl bg-[#e23635] px-7 py-4 text-lg font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-[0.97]"
+                  >
+                    <Phone className="h-5 w-5" />
+                    Emergency? Call {BUSINESS.phone}
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Stats bar */}
@@ -67,6 +77,9 @@ export default function HomePage() {
             </div>
         </div>
       </section>
+
+      {/* Sentinel: sticky bar appears after this point */}
+      <div id="sticky-bar-sentinel" />
 
       {/* Request Appointment */}
       <section

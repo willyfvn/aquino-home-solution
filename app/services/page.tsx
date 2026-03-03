@@ -29,7 +29,7 @@ const services = [
     badge: "Heat Pump · Mini-Split · Air Conditioning",
     category: "Installation & Maintenance",
     tagline: "Cool air. Lower bills. Reliable performance.",
-    title: "AC – Air Conditioning",
+    title: "AC / Heat Pump",
     description:
       "High-efficiency air conditioning installation and maintenance designed for long-term comfort and savings. Total comfort solutions for homes & businesses.",
     icon: <Wind className="h-8 w-8" />,

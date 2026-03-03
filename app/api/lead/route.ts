@@ -72,6 +72,8 @@ export async function POST(request: NextRequest) {
     zip: formData.get("zip") || undefined,
     service: formData.get("service"),
     message: formData.get("message") || undefined,
+    date: formData.get("date") || undefined,
+    preferredTime: formData.get("preferredTime") || undefined,
   };
 
   const parsed = leadFormSchema.safeParse(fields);
@@ -82,7 +84,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { name, phone, email, zip, service, message } = parsed.data;
+  const { name, phone, email, zip, service, message, date, preferredTime } = parsed.data;
   // zip is optional — only present if submitted
 
   // Validate files
@@ -137,6 +139,8 @@ export async function POST(request: NextRequest) {
       <tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Email</td><td style="padding:8px;border:1px solid #e2e8f0"><a href="mailto:${email}">${email}</a></td></tr>
       ${zip ? `<tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">ZIP Code</td><td style="padding:8px;border:1px solid #e2e8f0">${zip}</td></tr>` : ""}
       <tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Service</td><td style="padding:8px;border:1px solid #e2e8f0">${serviceName}</td></tr>
+      ${date ? `<tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Preferred Date</td><td style="padding:8px;border:1px solid #e2e8f0">${date}</td></tr>` : ""}
+      ${preferredTime ? `<tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Preferred Time</td><td style="padding:8px;border:1px solid #e2e8f0">${preferredTime}</td></tr>` : ""}
       ${message ? `<tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Message</td><td style="padding:8px;border:1px solid #e2e8f0">${message}</td></tr>` : ""}
       ${validFiles.length > 0 ? `<tr><td style="padding:8px;font-weight:bold;border:1px solid #e2e8f0">Photos</td><td style="padding:8px;border:1px solid #e2e8f0">${validFiles.length} photo(s) attached</td></tr>` : ""}
     </table>

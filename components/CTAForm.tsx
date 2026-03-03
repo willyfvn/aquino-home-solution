@@ -4,7 +4,7 @@ import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { CheckCircle, Loader2, AlertCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -179,21 +179,24 @@ function CTAFormInner() {
         </div>
       )}
 
-      <Button
+      <button
         type="submit"
-        size="lg"
-        className="w-full"
         disabled={status === "submitting"}
+        className="flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white shadow-[0_10px_24px_-14px_rgba(80,90,110,0.6)] transition-all hover:brightness-105 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
+        style={{ background: "linear-gradient(135deg, oklch(0.52 0.04 250) 0%, oklch(0.62 0.03 240) 100%)" }}
       >
         {status === "submitting" ? (
           <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Loader2 className="h-4 w-4 animate-spin" />
             Sending…
           </>
         ) : (
-          "Submit"
+          <>
+            <Send className="h-4 w-4" />
+            Get My Free Estimate
+          </>
         )}
-      </Button>
+      </button>
 
       <p className="text-center text-xs text-muted-foreground">
         We respond within 1 business hour · No spam, ever

@@ -20,7 +20,7 @@ const services = [
     badge: "Heat Pump · Mini-Split · Air Conditioning",
     category: "Installation & Maintenance",
     tagline: "Total comfort solutions for homes & businesses",
-    title: "AC – Air Conditioning",
+    title: "AC / Heat Pump",
     highlight: "Cool air. Lower bills. Reliable performance.",
     description:
       "High-efficiency air conditioning installation and maintenance designed for long-term comfort and savings.",
@@ -60,9 +60,9 @@ const services = [
     icon: <Flame className="h-10 w-10" />,
     gallery: [
       { src: "/aquino-furnace-01.jpeg", alt: "Furnace installation" },
-      { src: "/aquino-furnace-02.jpeg", alt: "Furnace system close-up" },
-      { src: "/aquino-furnace-03.jpeg", alt: "Furnace maintenance work" },
-      { src: "/aquino-furnace-04.jpeg", alt: "Completed furnace install" },
+      { src: "/aquino-furnace-05.jpeg", alt: "Furnace system close-up" },
+      { src: "/aquino-furnace-06.jpeg", alt: "Furnace maintenance work" },
+      { src: "/aquino-furnace-07.jpeg", alt: "Completed furnace install" },
     ],
     subServices: [
       {
@@ -190,7 +190,7 @@ export default function ServiceSections() {
                 className="mb-5 inline-flex items-center justify-center rounded-2xl text-white"
                 style={{
                   background:
-                    "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.42 0.18 240) 100%)",
+                    "linear-gradient(135deg, oklch(0.52 0.04 250) 0%, oklch(0.62 0.03 240) 100%)",
                   padding: "1.1rem",
                 }}
               >
@@ -201,18 +201,9 @@ export default function ServiceSections() {
                 {service.title}
               </h3>
 
-              <div className="mt-4 flex flex-col items-center justify-center gap-2.5">
-                <span
-                  className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-white"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.42 0.18 240) 100%)",
-                  }}
-                >
+              <div className="mt-1">
+                <span className="text-sm font-semibold text-foreground">
                   {service.badge}
-                </span>
-                <span className="text-sm font-medium text-muted-foreground">
-                  {service.category}
                 </span>
               </div>
 

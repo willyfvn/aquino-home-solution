@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -25,8 +26,8 @@ export default function Header() {
           <Image
             src="/aquino-logo.webp"
             alt="Aquino Home Solutions"
-            width={256}
-            height={256}
+            width={180}
+            height={180}
             className="rounded-md"
           />
         </Link>

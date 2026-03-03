@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="bg-[linear-gradient(135deg,rgba(8,14,36,0.98)_0%,rgba(14,34,84,0.96)_48%,rgba(110,14,30,0.95)_100%)] py-10 md:py-14">
+    <section className="py-10 md:py-14" style={{ background: "linear-gradient(135deg, oklch(0.42 0.03 250) 0%, oklch(0.50 0.025 240) 100%)" }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
           <p className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">
@@ -81,11 +81,11 @@ export default function WhyChooseUs() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="rounded-2xl border border-blue-400/20 p-8 text-center"
+              className="rounded-2xl border border-white/10 p-8 text-center"
               style={{
                 background:
-                  "linear-gradient(135deg, oklch(0.28 0.12 250) 0%, oklch(0.38 0.16 240) 100%)",
-                boxShadow: "0 4px 16px oklch(0.28 0.12 250 / 0.35)",
+                  "linear-gradient(135deg, oklch(0.28 0.03 250) 0%, oklch(0.34 0.025 240) 100%)",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.35)",
                 transition: "opacity 1.4s ease, transform 1.4s ease",
                 transitionDelay: `${i * 250}ms`,
                 opacity: visible[i] ? 1 : 0,

@@ -18,6 +18,8 @@ export const leadFormSchema = z.object({
     .optional(),
   service: z.enum(serviceIds, { error: "Please select a service" }),
   message: z.string().max(1000, "Message must be under 1000 characters").optional(),
+  date: z.string().optional(),
+  preferredTime: z.string().optional(),
 });
 
 export type LeadFormValues = z.infer<typeof leadFormSchema>;
